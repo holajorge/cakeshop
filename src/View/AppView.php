@@ -15,6 +15,8 @@ namespace App\View;
 
 use Cake\View\View;
 
+// uuso del plugin
+use BootstrapUI\View\UIViewTrait;
 /**
  * Application View
  *
@@ -24,17 +26,11 @@ use Cake\View\View;
  */
 class AppView extends View
 {
+    // invocar el metodo
+    use UIViewTrait;
 
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading helpers.
-     *
-     * e.g. `$this->loadHelper('Html');`
-     *
-     * @return void
-     */
     public function initialize()
     {
+        $this->initializeUI(['layout' => false]);
     }
 }

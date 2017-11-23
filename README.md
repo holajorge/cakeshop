@@ -68,3 +68,46 @@ configuration relevant for your application.
 The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) CSS
 framework by default. You can, however, replace it with any other library or
 custom styles.
+
+## bake 
+
+Este es un comando que se utiliza para generar codigo automatico de cakephp
+
+```bash
+bin/cake bake controller User
+bin/cake bake model users
+```
+crea un archivo con los metodos necesarios para realizar una accion
+
+## bake all Products
+
+```bash
+bin/bake bake all Products 
+```
+
+Crea todo los archivos necesarios para una table de products
+en resumen este comando crea un crud completo de toda la tabla
+nota: es necesario definir una migracion de la tabla que se 
+quiere crear de esta forma
+
+# Bootstrap UI
+
+[Bootstrap-ui](https://github.com/FriendsOfCake/bootstrap-ui)
+
+
+Installing Using Composer
+
+cd to the root of your app folder (where the composer.json file is) and run the following command:
+
+```bash
+composer require friendsofcake/bootstrap-ui
+```
+>Then load the plugin by adding the following to your app's config/boostrap.php:
+
+>Definir en el archivo /config/bootstrap lo siguiente
+
+\Cake\Core\Plugin::load('BootstrapUI');
+
+### or using CakePHP's console:
+
+./bin/cake plugin load BootstrapUI
