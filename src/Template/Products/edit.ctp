@@ -4,7 +4,7 @@
             <h2>Editar producto</h2>
         </div>
      
-        <?= $this->Form->create($product) ?>
+        <?= $this->Form->create($product, ['type' => 'file']) ?>
         <fieldset>      
          <?= $this->element('products/fields')?>
         </fieldset>

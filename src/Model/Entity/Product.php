@@ -34,7 +34,7 @@ class Product extends Entity
         'quantity' => true,
         'price' => true,
         'photo' => true,
-        'photo_dir' => true,
+        'photo_dir' => false,
         'created' => true,
         'modified' => true
     ];

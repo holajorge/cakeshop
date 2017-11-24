@@ -218,3 +218,4 @@ if (Configure::read('debug')) {
 
 //se carga el archivo ui de bootstrao 
 Plugin::load('BootstrapUI');
+Plugin::load('Proffer');

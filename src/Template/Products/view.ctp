@@ -1,56 +1,59 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Product $product
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Product'), ['action' => 'edit', $product->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Product'), ['action' => 'delete', $product->id], ['confirm' => __('Are you sure you want to delete # {0}?', $product->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Products'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Product'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="products view large-9 medium-8 columns content">
-    <h3><?= h($product->name) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($product->name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Photo') ?></th>
-            <td><?= h($product->photo) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Photo Dir') ?></th>
-            <td><?= h($product->photo_dir) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($product->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Quantity') ?></th>
-            <td><?= $this->Number->format($product->quantity) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Price') ?></th>
-            <td><?= $this->Number->format($product->price) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($product->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($product->modified) ?></td>
-        </tr>
-    </table>
-    <div class="row">
-        <h4><?= __('Description') ?></h4>
-        <?= $this->Text->autoParagraph(h($product->description)); ?>
+
+<?= $this->Html->css(['perfil.css'])?>
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+                        
+                        <div class="preview-pic tab-content">
+                          <div class="tab-pane active" id="pic-1"><img src="/img/default-product.jpg" class="img-responsive" /></div>
+                          <div class="tab-pane" id="pic-2"><img src="/img/default-product.jpg" class="img-responsive"  /></div>
+                          <div class="tab-pane" id="pic-3"><img src="/img/default-product.jpg" class="img-responsive"  /></div>
+                          <div class="tab-pane" id="pic-4"><img src="/img/default-product.jpg" class="img-responsive"  /></div>
+                          <div class="tab-pane" id="pic-5"><img src="/img/default-product.jpg" class="img-responsive"  /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                          <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="/img/default-product.jpg" class="img-responsive" /></a></li>
+                          <li><a data-target="#pic-2" data-toggle="tab"><img src="/img/default-product.jpg" class="img-responsive" /></a></li>
+                          <li><a data-target="#pic-3" data-toggle="tab"><img src="/img/default-product.jpg" class="img-responsive" /></a></li>
+                          <li><a data-target="#pic-4" data-toggle="tab"><img src="/img/default-product.jpg" class="img-responsive" /></a></li>
+                          <li><a data-target="#pic-5" data-toggle="tab"><img src="/img/default-product.jpg" class="img-responsive" /></a></li>
+                        </ul>
+                        
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title"><?= h($product->name) ?></h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no"> reviews</span>
+                        </div>
+                        <p class="product-description"><?= h($product->description) ?></p>
+                        <h4 class="price">price: <span><?= $this->Number->format($product->price) ?></span></h4>
+                        <p class="vote"><strong> <?= $this->Number->format($product->quantity) ?> %</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                        <h5 class="sizes">sizes:
+                            <span class="size" data-toggle="tooltip" title="small">s</span>
+                            <span class="size" data-toggle="tooltip" title="medium">m</span>
+                            <span class="size" data-toggle="tooltip" title="large">l</span>
+                            <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                        </h5>
+                        <h5 class="colors">colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>
+                        <div class="action">
+                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
